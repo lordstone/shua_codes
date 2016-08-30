@@ -30,7 +30,7 @@ bool isDupChar(string s1, string s2){
 int main(){
 
 	string v1 = "";
-	string v2 = "avvdfdb";
+	string v2 = "abcdefg";
 
 	cin >> v1;
 
