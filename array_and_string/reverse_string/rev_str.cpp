@@ -20,7 +20,7 @@ int main(){
 	string str_in = "";
 	cin >> str_in;
 
-	cout << rev_str(str_in);
+	cout << rev_str(str_in) << endl;
 
 	return 0;
 
