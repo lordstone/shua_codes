@@ -12,6 +12,12 @@ struct node {
 	node(int v) : val(v), next(nullptr) {}
 };
 
+struct lnode {
+	char val;
+	lnode * next;
+	lnode(char c) : val(c), next(nullptr) {}
+};
+
 vector<node*> generateLinkedList(int units, int length=10, int range=100){
 	vector<node*> mylist;
 	srand(length);
@@ -45,9 +51,34 @@ void displayLinkedList(node * head, string lname="New"){
 	cout << endl;
 }
 
+void displayLList(lnode * head, string lname="New"){
+	cout << "linked List " << lname << ": ";
+	unordered_set<lnode*> mySet;
+	while(head){
+		cout << (head->val);
+		if (head -> next) cout << "->";
+		if(mySet.find(&*head) != mySet.end()){
+			cout << "(circle detected, end)";
+			break;
+		}
+		mySet.insert(&*head);
+		head = head -> next;
+	}
+	cout << endl;
+}
+
 void deleteList(node *head){
 	while(head){
 		node * todelete = head;
+		head = head -> next;
+		todelete -> next = nullptr;
+		delete todelete;
+	}
+}
+
+void deleteLList(lnode *head){
+	while(head){
+		lnode * todelete = head;
 		head = head -> next;
 		todelete -> next = nullptr;
 		delete todelete;
@@ -93,3 +124,19 @@ node * createListWithLetters(string s){
 	}
 	return head;
 }
+
+lnode * createLList(string s){
+	lnode * head = nullptr;
+	lnode * cur = nullptr;
+	for(char c : s){
+		if(!head){
+			head = new lnode(c);
+			cur = head;
+		}else{
+			cur -> next = new lnode(c);
+			cur = cur -> next;
+		}
+	}
+	return head;
+}
+
