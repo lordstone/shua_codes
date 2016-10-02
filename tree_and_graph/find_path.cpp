@@ -5,18 +5,6 @@
 
 using namespace std;
 
-int maxLevel(bnode * root){
-	if(!root) return 0;
-	return max(maxLevel(root -> left), maxLevel(root -> right)) + 1;
-}
-
-bool isBalanced(bnode * root){
-	if(!root) return true;
-	int leftLvl = maxLevel(root -> left);
-	int rightLvl = maxLevel(root -> right);
-	return abs(leftLvl - rightLvl) <= 1;
-}
-
 int main(int argc, char* argv []){
 	int rseed = argc > 1 ? stoi(argv[1]) : 1;
 	srand(rseed);
