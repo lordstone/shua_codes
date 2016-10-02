@@ -9,14 +9,20 @@ int op(int n){
 	return a > b ? a : b;	
 }
 
+int op2(int n){
+	// get avg and ceiling it
+	int a = (n % 100) / 10;
+	int b = n % 10;
+	return (a + b + 1) / 2;
+}
+
 
 int procAndGetMin(int n){
 	int res = -1;
 	int bottom = 0;
 	int mult = 1;
 	while(n > 0){
-		int target = bottom + n * mult;
-		int tmp = ((n / 100) * mult * 10) + op(n % 100) * mult + bottom;
+		int tmp = ((n / 100) * mult * 10) + op2(n % 100) * mult + bottom;
 		if (res == -1 || res > tmp){
 			res = tmp;
 		}
