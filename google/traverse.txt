@@ -1,0 +1,26 @@
+dir1
+dir2
+dir3
+ dir3s1
+ dir3s2
+  dir3s2s1
+   image.gif
+   image.jpeg
+   image.txt
+   dir3s2s1s1
+    dir3s2s1s1s1
+     image.gif
+     dir3s2s1s1s1s1
+      i.gif
+      j.gif
+  im.gif
+  im.jpeg
+  im.big
+pop.jpeg
+pop.gif
+pop.docx
+dir4
+ dir4s1
+ dir4s2
+  immm.gif
+po.jpeg
